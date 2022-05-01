@@ -13,7 +13,7 @@ function App() {
     setError(null);
     try {
       // const resp = await fetch('https://swapi.dev/api//films/');
-      const resp = await fetch('https://react-movies-f87e2-default-rtdb.firebaseio.com/movies.json');
+      const resp = await fetch(process.env.REACT_APP_MOVIES_LINK);
       if(!resp.ok) {
         throw new Error('Something went wrong');
       }
@@ -59,7 +59,7 @@ function App() {
 
   const addMovieHandler = async (movie) => {
     // setMovies([...movies, movie]);
-    const res = await fetch('https://react-movies-f87e2-default-rtdb.firebaseio.com/movies.json', {
+    const res = await fetch(process.env.REACT_APP_MOVIES_LINK, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
