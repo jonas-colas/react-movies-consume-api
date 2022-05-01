@@ -58,7 +58,6 @@ function App() {
   }
 
   const addMovieHandler = async (movie) => {
-    // setMovies([...movies, movie]);
     const res = await fetch(process.env.REACT_APP_MOVIES_LINK, {
       method: 'POST',
       headers: {
